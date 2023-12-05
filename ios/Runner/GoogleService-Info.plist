@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDHW8-f3RaHJR9qPz9MptCapdcJ18odLhI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>141212125059</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.ecoLocaliza</string>
+	<key>PROJECT_ID</key>
+	<string>ecolocaliza-94a24</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ecolocaliza-94a24.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:141212125059:ios:ef990ad90e2cca946098b6</string>
+</dict>
+</plist>

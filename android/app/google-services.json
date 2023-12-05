@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "141212125059",
+    "project_id": "ecolocaliza-94a24",
+    "storage_bucket": "ecolocaliza-94a24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141212125059:android:715a8114dd8ac7296098b6",
+        "android_client_info": {
+          "package_name": "com.example.eco_localiza"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCodLcaBuEpde6DiX37Jr8UZbN6OngEGOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141212125059:android:46d1e962bf25259a6098b6",
+        "android_client_info": {
+          "package_name": "com.example.ecolocaliza_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCodLcaBuEpde6DiX37Jr8UZbN6OngEGOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 
 import 'view/start_screen.dart';
 import 'view/user/login_screen.dart';
+import 'view/user/register_screen.dart';
+import 'view/company/company_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +23,8 @@ Future<void> main() async {
     getPages: [
       GetPage(name: '/startScreen', page: ()=> StartScreen()),
       GetPage(name: '/loginScreen', page: ()=> LoginScreen()),
+      GetPage(name: '/registerScreen', page: ()=> RegisterScreen()),
+      GetPage(name: '/companyScreen', page: ()=> CompanyScreen()),
     ],
   ));
 }

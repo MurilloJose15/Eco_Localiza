@@ -68,22 +68,40 @@ class StartScreen extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Color.fromRGBO(69, 255, 101, 1.000),
-                            minimumSize: Size(180, 38)),
-                        onPressed: () {},
+                          primary: Color.fromRGBO(69, 255, 101, 1.000),
+                          minimumSize: Size(180, 38),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(
+                              color: Color.fromRGBO(69, 255, 101, 1.000),
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          Get.toNamed('/');
+                        },
                         child: Text(
                           'Localizar Empresas',
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
                             fontSize: 16,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                       SizedBox(width: 10),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Color.fromRGBO(69, 255, 101, 1.000),
-                            minimumSize: Size(180, 38)),
+                          primary: Color.fromRGBO(69, 255, 101, 1.000),
+                          minimumSize: Size(192, 38),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(
+                              color: Color.fromRGBO(69, 255, 101, 1.000),
+                              width: 2,
+                            ),
+                          ),
+                        ),
                         onPressed: () {
                           Get.toNamed('/loginScreen');
                         },

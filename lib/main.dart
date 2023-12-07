@@ -1,4 +1,5 @@
 import 'package:eco_localiza/firebase_options.dart';
+import 'package:eco_localiza/view/user/reset_password.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'view/start_screen.dart';
 import 'view/user/login_screen.dart';
 import 'view/user/register_screen.dart';
 import 'view/company/company_screen.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +26,7 @@ Future<void> main() async {
       GetPage(name: '/startScreen', page: ()=> StartScreen()),
       GetPage(name: '/loginScreen', page: ()=> LoginScreen()),
       GetPage(name: '/registerScreen', page: ()=> RegisterScreen()),
+      GetPage(name: '/resetScreen', page: ()=> ResetPassScreen()),
       GetPage(name: '/companyScreen', page: ()=> CompanyScreen()),
     ],
   ));

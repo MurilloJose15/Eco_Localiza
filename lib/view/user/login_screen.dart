@@ -118,7 +118,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Align(
                         alignment: Alignment.bottomRight,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed('/resetScreen');
+                          },
                           child: Text(
                             'esqueceu a senha?',
                             style: GoogleFonts.roboto(
@@ -162,6 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 _emailController.text,
                                 _passwordController.text,
                               );
+
                             }
                           },
                           child: Text(

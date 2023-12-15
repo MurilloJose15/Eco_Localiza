@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-import 'package:eco_localiza/control/user/user_control.dart';
+import 'package:eco_localiza/control/user/firebase_register.dart';
 import 'package:eco_localiza/validator/cnpj_validator.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -17,20 +17,21 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _cnpjController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _cnpjController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   final _cnpjMaskFormatter = MaskTextInputFormatter(
     mask: '##.###.###/####-##', // Define a máscara do CNPJ
-    filter: {'#': RegExp(r'[0-9]')}, // Define o filtro para aceitar apenas números
+    filter: {
+      '#': RegExp(r'[0-9]')
+    }, // Define o filtro para aceitar apenas números
   );
 
   @override
   Widget build(BuildContext context) {
-
     FirebaseRegister firebaseRegister = FirebaseRegister(context);
 
     return Scaffold(
@@ -60,7 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: GoogleFonts.roboto(
                           fontSize: 22,
                           fontWeight: FontWeight.w900,
-                          color: Color.fromRGBO(69, 255, 101, 1.800)),
+                          color: Color.fromRGBO(74, 223, 103, 1.000)),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -79,9 +80,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           validator: MultiValidator([
                             RequiredValidator(errorText: 'Campo obrigatório'),
                             MinLengthValidator(3,
-                                errorText: 'O nome deve ter no mínimo 3 caracteres'),
+                                errorText:
+                                    'O nome deve ter no mínimo 3 caracteres'),
                             MaxLengthValidator(50,
-                                errorText: 'O nome deve ter no máximo 30 caracteres'),
+                                errorText:
+                                    'O nome deve ter no máximo 30 caracteres'),
                           ]),
                           decoration: InputDecoration(
                             hintText: 'Nome',
@@ -129,10 +132,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         padding: const EdgeInsets.fromLTRB(24.0, 15, 24, 5),
                         child: TextFormField(
                           controller: _phoneController,
-                          validator: MultiValidator([
-                            RequiredValidator(errorText: 'Email é Obrigatório'),
-                            EmailValidator(errorText: 'Insira um email Válido'),
-                          ]),
                           decoration: InputDecoration(
                             hintText: 'Telefone',
                             border: OutlineInputBorder(
@@ -146,7 +145,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           controller: _passwordController,
                           obscureText: true,
                           validator: MultiValidator([
-                            RequiredValidator(errorText: 'A Senha é obrigatória'),
+                            RequiredValidator(
+                                errorText: 'A Senha é obrigatória'),
                             MinLengthValidator(6,
                                 errorText:
                                     'A Senha deve ser maior que 6 caracteres'),
@@ -171,7 +171,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.zero,
                                 side: BorderSide(
-                                  color: Color.fromRGBO(69, 255, 101, 1.000),
+                                  color: Color.fromRGBO(74, 223, 103, 1.000),
                                   width: 2,
                                 ),
                               ),
@@ -182,7 +182,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             child: Text(
                               'Voltar',
                               style: TextStyle(
-                                color: Color.fromRGBO(69, 255, 101, 1.000),
+                                color: Color.fromRGBO(74, 223, 103, 1.000),
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -191,22 +191,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           SizedBox(width: 20),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                primary: Color.fromRGBO(69, 255, 101, 1.000),
-                                minimumSize: Size(170, 38)),
+                              primary: Color.fromRGBO(74, 223, 103, 1.000),
+                              minimumSize: Size(170, 38),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.zero,
+                              ),
+                            ),
                             onPressed: () {
-                              firebaseRegister.reguser(
-                                  _nameController.text,
-                                  _emailController.text,
-                                  _cnpjController.text,
-                                  _phoneController.text,
-                                  _passwordController.text);
+                              if (_formKey.currentState?.validate() ?? false) {
+                                firebaseRegister.reguser(
+                                    _nameController.text,
+                                    _emailController.text,
+                                    _cnpjController.text,
+                                    _phoneController.text,
+                                    _passwordController.text);
+                              }
                             },
                             child: Text(
                               'Cadastrar-se',
                               style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                             ),
                           ),
                         ],

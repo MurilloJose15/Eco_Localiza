@@ -1,6 +1,10 @@
-import 'package:eco_localiza/control/user/user_control.dart';
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
+
+import 'package:eco_localiza/control/user/firebase_resetpass.dart';
+
 
 class ResetPassScreen extends StatefulWidget {
   const ResetPassScreen({super.key});
@@ -91,23 +95,57 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
                 SizedBox(
                   height: 10,
                 ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(69, 255, 101, 1.000),
-                      minimumSize: Size(170, 38)),
-                  child: Text('Enviar',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        minimumSize: Size(150, 38),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.zero,
+                          side: BorderSide(
+                            color: Color.fromRGBO(74, 223, 103, 1.000),
+                            width: 2,
+                          ),
+                        ),
+                      ),
+                      onPressed: () {
+                        Get.offAllNamed('/loginScreen');
+                      },
+                      child: Text(
+                        'Voltar',
+                        style: TextStyle(
+                          color: Color.fromRGBO(74, 223, 103, 1.000),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
+                    SizedBox(width: 50,),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromRGBO(74, 223, 103, 1.000),
+                        minimumSize: Size(150, 38),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero),
+                      ),
+                      child: Text(
+                        'Enviar',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      onPressed: () {
+                        if (_formKey.currentState?.validate() ?? false) {
+                          resetPassword.resetpassword(
+                            _emailController.text,
+                          );
+                        }
+                      },
                     ),
-                  onPressed: () {
-                    if (_formKey.currentState?.validate() ?? false) {
-                      resetPassword.resetpassword(
-                        _emailController.text,
-                      );
-                    }
-                  },
+                  ],
                 ),
               ],
             ),

@@ -40,7 +40,7 @@ class StartScreen extends StatelessWidget {
                         style: GoogleFonts.playfairDisplay(
                             fontSize: 20,
                             fontWeight: FontWeight.w900,
-                            color: Color.fromRGBO(69, 255, 101, 1.800)),
+                            color: Color.fromRGBO(74,223,103,1.000)),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -68,23 +68,24 @@ class StartScreen extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromRGBO(69, 255, 101, 1.000),
-                          minimumSize: Size(180, 38),
+                          primary: Color.fromRGBO(74,223,103,1.000),
+                          minimumSize: Size(192, 38),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.zero,
                             side: BorderSide(
-                              color: Color.fromRGBO(69, 255, 101, 1.000),
+                              color: Color.fromRGBO(74,223,103,1.000),
                               width: 2,
                             ),
                           ),
                         ),
                         onPressed: () {
-                          Get.toNamed('/');
+                          Get.toNamed('/homeScreen');
                         },
                         child: Text(
                           'Localizar Empresas',
                           style: TextStyle(
                             fontSize: 16,
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -92,12 +93,12 @@ class StartScreen extends StatelessWidget {
                       SizedBox(width: 10),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromRGBO(69, 255, 101, 1.000),
+                          primary: Color.fromRGBO(74,223,103,1.000),
                           minimumSize: Size(192, 38),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.zero,
                             side: BorderSide(
-                              color: Color.fromRGBO(69, 255, 101, 1.000),
+                              color: Color.fromRGBO(74,223,103,1.000),
                               width: 2,
                             ),
                           ),
@@ -109,6 +110,7 @@ class StartScreen extends StatelessWidget {
                           'Sou Empresa',
                           style: TextStyle(
                             fontSize: 16,
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

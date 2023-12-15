@@ -44,6 +44,11 @@ dependencies:
   firebase_auth: ^4.15.0
   cloud_firestore: ^4.13.4
   mask_text_input_formatter: ^2.7.0
+  google_maps_flutter: ^2.5.0
+  geolocator: ^10.1.0
+  geocoding: ^2.1.1
+  http: ^1.1.2
+  uuid: ^4.2.1
 
 
 
